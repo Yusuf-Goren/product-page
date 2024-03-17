@@ -1,14 +1,18 @@
 const productContainers = [...document.querySelectorAll(".product-container")];
-const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
-const preBtn = [...document.querySelectorAll(".pre-btn")];
+const nxtBtn = document.querySelector(".nxt-btn");
+const preBtn = document.querySelector(".pre-btn");
 
 const productCards = document.querySelectorAll(".product-card");
 
+const productContainer = document.querySelector(".product-container");
+
+const productContainerCard = document.querySelector(".product-card");
+
 productCards.forEach((card) => {
   // Select color selectors within the current product card
-  const colorSelectors = card.querySelectorAll(".color-selector div");
+  let colorSelectors = card.querySelectorAll(".color-selector div");
   // Select current product card
-  const currentImage = card.querySelector(".product-thumb");
+  let currentImage = card.querySelector(".product-thumb");
   // Add click event listener to each color selector within the current product card
   colorSelectors.forEach((selector) => {
     selector.addEventListener("click", function () {
@@ -18,28 +22,37 @@ productCards.forEach((card) => {
       });
       // Add "selected" class to the clicked color selector
       this.classList.add("selected");
-      const nextColor = selector.classList[0];
-      const currentImageSrc = currentImage.getAttribute("data-item");
+      let nextColor = selector.classList[0];
+      let currentImageSrc = currentImage.getAttribute("data-item");
       // Change image src
       currentImage.src = `images/${currentImageSrc + nextColor}.png`;
     });
   });
 });
 
+const handleScroll = () => {
+  // Handle end of container
+  preBtn.classList.toggle("display-0", productContainer.scrollLeft === 0);
+  nxtBtn.classList.toggle(
+    "display-0",
+    productContainer.scrollWidth / 5 <= productContainer.scrollLeft
+  );
+};
+
 productContainers.forEach((item, i) => {
   let containerDimensions = item.getBoundingClientRect();
   let containerWidth = containerDimensions.width;
   // Slider effect
-  nxtBtn[i].addEventListener("click", () => {
+  nxtBtn.addEventListener("click", () => {
     // Change arrow opacity
-    nxtBtn[i].classList.add("opacity-0");
-    preBtn[i].classList.remove("opacity-0");
+    nxtBtn.classList.add("display-0");
+    preBtn.classList.remove("display-0");
     item.scrollLeft += containerWidth;
   });
 
-  preBtn[i].addEventListener("click", () => {
-    nxtBtn[i].classList.remove("opacity-0");
-    preBtn[i].classList.add("opacity-0");
+  preBtn.addEventListener("click", () => {
+    nxtBtn.classList.remove("display-0");
+    preBtn.classList.add("display-0");
     item.scrollLeft -= containerWidth;
   });
 });

@@ -76,6 +76,7 @@
   padding-bottom: 0.5em;
 }
 .text-section span {
+  cursor: pointer;
   font-family: "Avenir-Light";
   font-size: 0.8vw;
   line-height: 1.5;
@@ -127,6 +128,7 @@
 }
 
 .product-brand {
+  cursor: pointer;
   font-size: 0.7vw;
   font-family: "Avenir-Light";
   margin-bottom: 0.3vw;
@@ -185,7 +187,7 @@
   /* height: 100%; */
   border: none;
   position: absolute;
-  top: 66%;
+  top: 67%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -216,8 +218,8 @@
   opacity: 1;
 }
 
-.opacity-0 {
-  opacity: 0;
+.display-0 {
+  display: none;
 }
 .mobile {
   display: none;
@@ -245,10 +247,11 @@
     left: 0;
     margin-left: 7vw;
     padding-left: 0;
-    padding-right: 25%;
+    padding-right: 25vw;
     top: 34%;
     font-size: 3.7vw;
     color: white;
+    cursor: pointer;
   }
   .imgBox {
     width: 100%;
@@ -258,6 +261,7 @@
     font-size: 3.2vw;
   }
   .text-section-mobile a span {
+    cursor: pointer;
     padding-bottom: 1vw;
     border-bottom: 1px solid white;
   }
@@ -309,15 +313,15 @@
   }
   .pre-btn,
   .nxt-btn {
-    width: 10vw;
+    width: 8vw;
   }
   .pre-btn {
-    top: 30%;
-    left: 30%;
+    bottom: 55vw;
+    left: 7vw;
   }
 
   .nxt-btn {
-    top: 30%;
-    right: 4%;
+    bottom: 55vw;
+    right: 4vw;
   }
 }
