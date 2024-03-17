@@ -9,3 +9,4 @@ This repository contains a product page created using HTML, CSS, and JavaScript.
 - Change product image color
 - Resposive
 
+git clone https://github.com/Yusuf-Goren/product-page.git
