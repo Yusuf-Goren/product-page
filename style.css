@@ -1,0 +1,323 @@
+/* HEADER */
+
+@font-face {
+  font-family: "ITC Avant Garde Gothic Pro";
+  src: url("fonts/ITC Avant Garde Gothic Pro-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("fonts/avenir_roman_12.otf") format("opentype");
+}
+@font-face {
+  font-family: "Avenir-Light";
+  src: url("fonts/Avenir-Light.ttf");
+}
+@font-face {
+  font-family: "Avenir-Bold";
+  src: url("fonts/Avenir Next LT Pro Bold.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  width: 85%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 5px;
+  display: flex;
+  background-color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "ITC Avant Garde Gothic Pro";
+  background-color: #e0e0e0;
+}
+
+.imgBox {
+  width: 50%;
+}
+
+.imgBox img {
+  width: 100%;
+
+  object-fit: cover;
+}
+.contentBox {
+  width: 45%;
+  height: 100%;
+  padding: 8%;
+  font-family: "ITC Avant Garde Gothic Pro";
+}
+.text-section-mobile {
+  display: none;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  height: 50%;
+  font-size: 1vw;
+  padding: 15% 30% 0 15%;
+  line-height: 2em;
+}
+
+.text-section a span {
+  font-family: "Avenir-Bold";
+  border-bottom: 1px solid black;
+  padding-bottom: 0.5em;
+}
+.text-section span {
+  font-family: "Avenir-Light";
+  font-size: 0.8vw;
+  line-height: 1.5;
+}
+
+/* PRODUCTS */
+.product {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-container {
+  margin-left: 15%;
+  margin-right: 3%;
+  display: flex;
+  gap: 2em;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 40%;
+  /* height: 450px; */
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  /* height: 350px; */
+  overflow: hidden;
+}
+
+.product-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  width: 100%;
+  /* height: 100px; */
+  margin-top: 0.3vw;
+}
+
+.product-brand {
+  font-size: 0.7vw;
+  font-family: "Avenir-Light";
+  margin-bottom: 0.3vw;
+}
+
+.info {
+  display: none;
+}
+
+.product-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.color-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.color-selector div.selected {
+  box-shadow: 0 0 0 0.1vw #f3f5f6 inset;
+  border: 2px solid black;
+}
+.color1,
+.color2,
+.color3,
+.color4 {
+  width: 1vw;
+  height: 1vw;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.color1 {
+  background-color: #99c3cc;
+}
+.color2 {
+  background-color: #cc9999;
+}
+.color3 {
+  background-color: #cb99cc;
+}
+.color4 {
+  background-color: #bcd9b2;
+}
+
+.price {
+  font-family: "Avenir";
+  font-size: 0.8vw;
+}
+
+.pre-btn,
+.nxt-btn {
+  width: 2vw;
+  /* height: 100%; */
+  border: none;
+  position: absolute;
+  top: 66%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%); */
+  cursor: pointer;
+  z-index: 8;
+  background-color: unset;
+}
+
+.pre-btn {
+  left: 15%;
+  transform: rotate(180deg);
+}
+
+.nxt-btn {
+  right: 4%;
+}
+
+.pre-btn img,
+.nxt-btn img {
+  /* border: 1px solid black; */
+  opacity: 0.8;
+  width: 100%;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/2;
+  }
+  .product {
+    width: 0%;
+    position: unset;
+  }
+  .text-section {
+    display: none;
+  }
+
+  .text-section-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 6vw;
+    position: absolute;
+    left: 0;
+    margin-left: 7vw;
+    padding-left: 0;
+    padding-right: 25%;
+    top: 34%;
+    font-size: 3.7vw;
+    color: white;
+  }
+  .imgBox {
+    width: 100%;
+  }
+
+  .text-section-mobile a {
+    font-size: 3.2vw;
+  }
+  .text-section-mobile a span {
+    padding-bottom: 1vw;
+    border-bottom: 1px solid white;
+  }
+  .product-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 19vw;
+    margin-left: 7vw;
+    gap: 1em;
+    margin-right: 0;
+  }
+  .product-brand {
+    display: none;
+    font-size: 3vw;
+  }
+  .mobile {
+    display: block;
+  }
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+  }
+  .info {
+    display: block;
+  }
+  .product-detail {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1vw;
+  }
+
+  .price {
+    margin-top: 0.5vw;
+    font-size: 3vw;
+  }
+  .color1,
+  .color2,
+  .color3,
+  .color4 {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  .color-selector div.selected {
+    box-shadow: 0 0 0 0.3vw #f3f5f6 inset;
+    border: 1px solid black;
+  }
+  .pre-btn,
+  .nxt-btn {
+    width: 10vw;
+  }
+  .pre-btn {
+    top: 30%;
+    left: 30%;
+  }
+
+  .nxt-btn {
+    top: 30%;
+    right: 4%;
+  }
+}
