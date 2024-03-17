@@ -6,8 +6,6 @@ const productCards = document.querySelectorAll(".product-card");
 
 const productContainer = document.querySelector(".product-container");
 
-const productContainerCard = document.querySelector(".product-card");
-
 productCards.forEach((card) => {
   // Select color selectors within the current product card
   let colorSelectors = card.querySelectorAll(".color-selector div");
